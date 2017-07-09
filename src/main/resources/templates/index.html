@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1" />
+		<title>Login</title>
+		<link rel="stylesheet" href="app/home/css/style.css" media="screen"
+         type="text/css" />
+		<script
+         src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script
+         src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+		<script src="app/app.js"></script>
+		<script src="app/home/services/httpService.js"></script>
+		<script src="app/home/controller/loginController.js"></script>
+	</head>
+	<body>
+		<div ng-app="loginApp">
+			<div ng-controller="loginController as ctrl">
+				<h1 th:text="#{greeting}"></h1>
+				<div id="login">
+					<div class="msgDiv">
+						<span ng-bind="ctrl.statusMsg"></span>
+					</div>
+					<input type="text" ng-model="ctrl.username" class="input-box"
+                  th:placeholder="#{username.placeholder}"></input>
+					<input
+                  type="password" ng-model="ctrl.password" class="input-box"
+                  th:placeholder="#{password.placeholder}"></input>
+					<input
+                  type="button" value="Log in" ng-click="ctrl.login()"></input>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
