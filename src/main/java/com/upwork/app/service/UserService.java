@@ -21,22 +21,18 @@ public class UserService {
 	@Autowired
 	private UserDao userDao;
 
-	@Transactional
 	public void create(User user) {
 		userDao.create(user);
 	}
 
-	@Transactional
 	public void update(User user) {
 		userDao.update(user);
 	}
 
-	@Transactional
 	public User getUserById(int id) {
 		return userDao.getUserById(id);
 	}
 
-	@Transactional
 	public void delete(int id) {
 		userDao.delete(id);
 	}
